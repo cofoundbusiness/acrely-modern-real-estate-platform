@@ -13,13 +13,19 @@ export const PropertyCard = memo(({ property, onClick }: PropertyCardProps) => (
     className="bg-white dark:bg-slate-900 rounded-xl md:rounded-2xl overflow-hidden group cursor-pointer border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl hover:shadow-slate-200/50 dark:hover:shadow-slate-900/50 transition-all duration-300 transform hover:-translate-y-1 flex flex-col h-full will-change-transform"
   >
     <div className="relative h-48 md:h-64 overflow-hidden bg-slate-100 dark:bg-slate-800">
-      <img 
-        src={property.image} 
-        alt={property.title} 
-        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
-        loading="lazy"
-        decoding="async"
-      />
+      {property.image ? (
+        <img 
+          src={property.image} 
+          alt={property.title} 
+          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div className="w-full h-full bg-slate-200 dark:bg-slate-800 flex items-center justify-center">
+          <span className="text-slate-500 dark:text-slate-400 text-sm">Image placeholder</span>
+        </div>
+      )}
       <div className="absolute top-3 left-3 flex gap-2">
         {property.tags.map((tag, idx) => (
           <span key={idx} className="bg-slate-900/80 text-white backdrop-blur-md text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wide">

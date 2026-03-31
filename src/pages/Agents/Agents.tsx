@@ -64,11 +64,17 @@ const Agents: React.FC = () => {
             {agents.map((agent) => (
               <div key={agent.id} className="bg-white dark:bg-slate-900 rounded-2xl md:rounded-3xl overflow-hidden border border-slate-100 dark:border-slate-800 shadow-sm hover:shadow-xl transition-all duration-300 group flex flex-col">
                 <div className="relative h-56 md:h-64 overflow-hidden">
-                  <img 
-                    src={agent.image} 
-                    alt={agent.name} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
-                  />
+                  {agent.image ? (
+                    <img 
+                      src={agent.image} 
+                      alt={agent.name} 
+                      className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" 
+                    />
+                  ) : (
+                    <div className="w-full h-full bg-slate-300 dark:bg-slate-700 flex items-center justify-center text-slate-600 dark:text-slate-400 text-sm font-medium">
+                      Image Placeholder
+                    </div>
+                  )}
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-900/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity"></div>
                   
                   <div className="absolute bottom-4 left-4 text-white">
@@ -93,7 +99,7 @@ const Agents: React.FC = () => {
                       <div className="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-wider font-bold">Deals Closed</div>
                     </div>
                     <div className="bg-slate-50 dark:bg-slate-800 p-2 md:p-3 rounded-lg md:rounded-xl text-center">
-                      <div className="text-base md:text-lg font-bold text-slate-900 dark:text-white">4.5<span className="text-[10px] md:text-xs text-slate-400">yrs</span></div>
+                      <div className="text-base md:text-lg font-bold text-slate-900 dark:text-white">0<span className="text-[10px] md:text-xs text-slate-400">yrs</span></div>
                       <div className="text-[9px] md:text-[10px] text-slate-400 uppercase tracking-wider font-bold">Experience</div>
                     </div>
                   </div>

@@ -55,7 +55,7 @@ const Careers: React.FC = () => {
         <div className="space-y-4">
           {[
             { title: "Senior Full Stack Engineer", dept: "Engineering", loc: "Remote", type: "Full-time" },
-            { title: "Product Designer", dept: "Design", loc: "Bangalore", type: "Hybrid" },
+            { title: "Product Designer", dept: "Design", loc: "Chengalpattu, Chennai", type: "Hybrid" },
             { title: "Real Estate Sales Manager", dept: "Sales", loc: "Mumbai", type: "On-site" },
             { title: "Marketing Lead", dept: "Marketing", loc: "Delhi NCR", type: "Remote" }
           ].map((job, idx) => (
@@ -79,7 +79,7 @@ const Careers: React.FC = () => {
         
         <div className="mt-12 text-center p-8 bg-slate-100 dark:bg-slate-800/50 rounded-2xl border border-slate-200 dark:border-slate-700 border-dashed">
           <p className="text-slate-600 dark:text-slate-300 font-medium mb-4">Don't see a role for you?</p>
-          <Button variant="outline" className="mx-auto bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200">Email us at careers@acrely.in</Button>
+          <Button variant="outline" className="mx-auto bg-white dark:bg-slate-900 hover:bg-slate-50 dark:hover:bg-slate-800 border-slate-200 dark:border-slate-700 text-slate-700 dark:text-slate-200">Email us at queries@acrely.in</Button>
         </div>
       </section>
     </div>

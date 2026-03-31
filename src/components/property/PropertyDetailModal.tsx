@@ -21,6 +21,9 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({ proper
     setFormData({ name: '', contact: '' });
   }, [property]);
 
+  const displayedImage = property.images?.[currentImageIndex] || property.image || '';
+  const hasImage = Boolean(displayedImage);
+
   const nextImage = (e: React.MouseEvent | KeyboardEvent) => {
     e.stopPropagation();
     setCurrentImageIndex((prev) => (prev + 1) % (property.images?.length || 1));
@@ -80,11 +83,17 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({ proper
         </div>
 
         <div className="flex-1 flex items-center justify-center relative overflow-hidden group">
-          <img 
-            src={property.images?.[currentImageIndex] || property.image} 
-            className="max-w-full max-h-full object-contain transition-transform duration-300" 
-            alt={`Full view ${currentImageIndex + 1}`} 
-          />
+          {hasImage ? (
+            <img 
+              src={displayedImage} 
+              className="max-w-full max-h-full object-contain transition-transform duration-300" 
+              alt={`Full view ${currentImageIndex + 1}`} 
+            />
+          ) : (
+            <div className="max-w-full max-h-full w-full h-full flex items-center justify-center bg-slate-200 dark:bg-slate-900 text-slate-500 dark:text-slate-400">
+              No image available
+            </div>
+          )}
           <button 
             onClick={prevImage} 
             className="absolute left-4 p-4 rounded-full text-white hover:bg-white/10 transition-all opacity-0 group-hover:opacity-100 outline-none focus:opacity-100"
@@ -131,11 +140,17 @@ export const PropertyDetailModal: React.FC<PropertyDetailModalProps> = ({ proper
            className="h-72 md:h-auto md:w-3/5 shrink-0 relative group bg-slate-900 select-none cursor-zoom-in"
            onClick={() => setIsFullScreen(true)}
          >
-           <img 
-             src={property.images?.[currentImageIndex] || property.image} 
-             className="w-full h-full object-cover transition-opacity duration-300" 
-             alt={`${property.title} view ${currentImageIndex + 1}`} 
-           />
+           {hasImage ? (
+             <img 
+               src={displayedImage} 
+               className="w-full h-full object-cover transition-opacity duration-300" 
+               alt={`${property.title} view ${currentImageIndex + 1}`} 
+             />
+           ) : (
+             <div className="w-full h-full flex items-center justify-center bg-slate-700 text-slate-100 text-sm">
+               No image available
+             </div>
+           )}
            
            <div className="absolute top-4 left-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
               <span className="bg-black/50 text-white text-xs font-bold px-3 py-1.5 rounded-full backdrop-blur-md flex items-center gap-2">

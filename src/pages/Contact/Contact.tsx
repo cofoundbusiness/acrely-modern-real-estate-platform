@@ -22,7 +22,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 dark:text-white text-lg">Headquarters</h3>
-                <p className="text-slate-500 dark:text-slate-400 mt-1">123, Tech Park Road, Whitefield,<br/>Bangalore - 560066</p>
+                <p className="text-slate-500 dark:text-slate-400 mt-1">Chengalpattu, Chennai - 603001</p>
               </div>
             </div>
             <div className="flex items-start gap-4 p-4 rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 hover:shadow-lg transition-all duration-300">
@@ -31,7 +31,7 @@ const Contact: React.FC = () => {
               </div>
               <div>
                 <h3 className="font-bold text-slate-900 dark:text-white text-lg">Email Us</h3>
-                <a href="mailto:hello@acrely.in" className="text-slate-500 dark:text-slate-400 mt-1 block hover:text-amber-600 dark:hover:text-amber-500">hello@acrely.in</a>
+                <a href="mailto:queries@acrely.in" className="text-slate-500 dark:text-slate-400 mt-1 block hover:text-amber-600 dark:hover:text-amber-500">queries@acrely.in</a>
                 <p className="text-xs text-slate-400 dark:text-slate-500 mt-1">Typical response time: 2 hours</p>
               </div>
             </div>
